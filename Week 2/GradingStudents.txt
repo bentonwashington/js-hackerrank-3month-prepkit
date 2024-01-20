@@ -1,0 +1,23 @@
+function gradingStudents(grades) {
+    // Write your code here
+    
+    //initialize variable to keep track of final grades
+    var finalGrades = [];
+    
+    //function that finds the next multiple of 5
+    function round5(x){
+        return Math.ceil(x / 5) * 5;
+        }
+    
+    //loop through array with proper rules to identify what the final grades is then push it to the final grades    
+    for (let i in grades) {
+        if (((round5(grades[i]) - grades[i]) < 3) && (grades[i] > 37)) {
+            finalGrades.push(round5(grades[i]))
+        } else {
+            finalGrades.push(grades[i])
+        }
+    }
+    
+    //THANK YOU JESUS!
+    return finalGrades;
+}
