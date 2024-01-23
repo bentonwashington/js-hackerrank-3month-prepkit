@@ -1,0 +1,19 @@
+function flippingMatrix(matrix) {
+    let len = matrix.length;
+    let half = len / 2;
+    
+    let sum = 0;
+    
+    for(let i=0; i < half; i++)
+        for(let j=0; j < half; j++)
+        {
+            sum += Math.max(
+                matrix[i][j],
+                matrix[i][len -1 - j],
+                matrix[len - 1 - i][j],
+                matrix[len - 1 - i][len - 1 - j]
+            );
+        }
+        
+    return sum;
+}
