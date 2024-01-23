@@ -1,0 +1,26 @@
+function countingValleys(steps, path) {
+    // Write your code here
+    
+    //keep track of altitude
+    var altitude = 0;
+    var valleyCount = 0;
+    
+    //loop through each letter
+    for (let i = 0; i < steps; i++) {
+        
+        //if the count is currently 0 and next letter is "D" then it's a valley
+        if ((altitude == 0) && (path[i] == "D")) {
+            valleyCount++;
+            }
+            
+        //now we need to update count depending on the letter
+        if (path[i] == "U") {
+            altitude++;
+        } else {
+            altitude--;
+        }
+    }
+    
+    //THE LION AND THE LAMB
+    return valleyCount;
+}
