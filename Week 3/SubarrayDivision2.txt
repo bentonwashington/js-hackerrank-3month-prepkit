@@ -1,0 +1,26 @@
+function birthday(s, d, m) {
+    // Write your code here
+    
+    //this is the variable that we'll need
+    //we need to keep count of how many matches we get
+    var count = 0;
+    
+    //loop through each element
+    for (let i = 0; i < s.length; i++) {
+        var sum = 0;
+        
+        //sum up the consecutive squares
+        for (let j = i; j < m + i; j++) {
+            sum = sum+s[j]
+        }
+        
+        //if the sum is equal to d then it counts!!
+        if (sum == d){
+            count++;
+        }
+    }
+    
+    //THANK YOU JESUS!!!
+    return count
+
+}
